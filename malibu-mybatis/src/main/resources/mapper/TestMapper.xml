@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.malibu.mybatis.mapper.ITestMapper">
+    <insert id="insertFlowTask" parameterType="com.malibu.mybatis.dto.FlowTask">
+        INSERT INTO wfp_flow_task(task_model_id,parent_task_id,task_type,flow_model_id,gmt_create,gmt_modify,is_deleted,add_user) VALUES (#{taskModelId},#{parentTaskId},#{taskType},#{flowModelId},#{gmtCreate},#{gmtModify},#{isDeleted},#{addUser})
+    </insert>
+</mapper>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!-- 参考文档 http://www.mybatis.org/mybatis-3/zh/getting-started.html-->
+<configuration>
+    <environments default="development">
+        <environment id="development">
+            <!--事务管理器配置 start-->
+            <transactionManager type="JDBC"/>
+            <!--事务管理器配置 end-->
+            <!--连接池配置 start-->
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://rdsrvraayrvraaypublic.mysql.rds.aliyuncs.com:3306/db_crawl?useUnicode=true&amp;characterEncoding=UTF-8"/>
+                <property name="username" value="crawl"/>
+                <property name="password" value="crawldwj"/>
+            </dataSource>
+            <!--连接池配置 end-->
+        </environment>
+    </environments>
+    <!--mapper映射器 start-->
+    <mappers>
+        <mapper resource="mapper/TestMapper.xml"/>
+    </mappers>
+    <!--mapper映射器 end-->
+</configuration>
