@@ -7,10 +7,16 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>malibu-mybatis</artifactId>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
     <name>malibu-mybatis</name>
     <url>http://maven.apache.org</url>
     <dependencies>
+        <!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+            <version>3.3.1</version>
+        </dependency>
 
     </dependencies>
     <build>
