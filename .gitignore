@@ -1,0 +1,10 @@
+*.iml
+*.ipr
+*.iws
+*.log
+/target
+/malibu-web/target
+/malibu-common/target
+/malibu-core/target
+/malibu-mybatis/target
+/.idea
