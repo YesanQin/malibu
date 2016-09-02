@@ -9,11 +9,11 @@
 
     <!--velocity-->
     <bean class="org.springframework.web.servlet.view.velocity.VelocityLayoutViewResolver">
-        <property name="prefix" value="/template/"/>
+        <property name="prefix" value="/page/vm/"/>
         <property name="suffix" value=".vm"/>
         <property name="contentType" value="text/html;charset=utf-8"></property>
         <property name="toolboxConfigLocation" value="/velocity/velocity-toolbox.xml"/>
-        <property name="layoutUrl" value="/template/layout.vm"></property>
+        <property name="layoutUrl" value="/page/vm/layout.vm"></property>
         <property name="exposeSessionAttributes" value="true" />
     </bean>
 
@@ -43,7 +43,7 @@
 
     <!-- freemarker config -->
     <bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
-        <property name="templateLoaderPath" value="/freeamarker"/>
+        <property name="templateLoaderPath" value="/page/ftl/"/>
         <property name="freemarkerSettings">
             <props>
                 <prop key="template_update_delay">5</prop>
