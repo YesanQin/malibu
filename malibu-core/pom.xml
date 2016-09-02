@@ -18,8 +18,28 @@
             <artifactId>malibu-common</artifactId>
             <version>1.0.0</version>
         </dependency>
+
         <!--spring framework start-->
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>4.3.2.RELEASE</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-web -->
+        <!--<dependency>-->
+            <!--<groupId>org.springframework</groupId>-->
+            <!--<artifactId>spring-web</artifactId>-->
+            <!--<version>4.3.2.RELEASE</version>-->
+        <!--</dependency>-->
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>4.3.2.RELEASE</version>
+        </dependency>
         <!-- spring framework end-->
+
     </dependencies>
     <build>
         <finalName>malibu-core</finalName>

@@ -1,10 +1,7 @@
 package com.malibu.springioc.controller;
 
 import com.malibu.springioc.service.IOrderService;
-import com.malibu.springioc.service.impl.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Component;
 
 /**
