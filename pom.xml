@@ -10,6 +10,7 @@
     <module>malibu-core</module>
     <module>malibu-web</module>
       <module>malibu-mybatis</module>
+      <module>malibu-springIOC</module>
   </modules>
   <name>malibu-all</name>
   <url>http://maven.apache.org</url>
