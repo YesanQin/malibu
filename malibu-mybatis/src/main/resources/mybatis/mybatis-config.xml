@@ -12,9 +12,9 @@
             <!--连接池配置 start-->
             <dataSource type="POOLED">
                 <property name="driver" value="com.mysql.jdbc.Driver"/>
-                <property name="url" value="jdbc:mysql://rdsrvraayrvraaypublic.mysql.rds.aliyuncs.com:3306/db_crawl?useUnicode=true&amp;characterEncoding=UTF-8"/>
-                <property name="username" value="crawl"/>
-                <property name="password" value="crawldwj"/>
+                <property name="url" value="jdbc:mysql://rdsrvraayrvraaypublic.mysql.rds.aliyuncs.com:3306/db_b2b?useUnicode=true&amp;characterEncoding=UTF-8"/>
+                <property name="username" value="b2b"/>
+                <property name="password" value="b2bdwj"/>
             </dataSource>
             <!--连接池配置 end-->
         </environment>
