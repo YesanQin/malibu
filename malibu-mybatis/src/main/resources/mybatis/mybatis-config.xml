@@ -21,7 +21,7 @@
     </environments>
     <!--mapper映射器 start-->
     <mappers>
-        <mapper resource="mapper/TestMapper.xml"/>
+        <mapper resource="mapper/OrderMapper.xml"/>
     </mappers>
     <!--mapper映射器 end-->
 </configuration>

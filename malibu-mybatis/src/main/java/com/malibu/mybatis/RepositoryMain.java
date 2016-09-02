@@ -17,34 +17,26 @@ public class RepositoryMain {
 
     private static SqlSessionFactoryBuilder sqlSessionFactoryBuilder;
     private static SqlSessionFactory sqlSessionFactory;
+    private static SqlSession sqlSession;
 
-    public static void main(String[] args) {
-        init();
-    }
-
-    public static void init(){
+    static {
         sqlSessionFactoryBuilder = new SqlSessionFactoryBuilder();
         String resource = "mybatis/mybatis-config.xml";
         Reader reader = null;
         try {
-           reader = Resources.getResourceAsReader(resource);
+            reader = Resources.getResourceAsReader(resource);
         } catch (IOException e) {
             System.out.println("获取配置文件失败!");
             e.printStackTrace();
         }
         sqlSessionFactory = sqlSessionFactoryBuilder.build(reader);
-        SqlSession sqlSession = sqlSessionFactory.openSession();
-        OrderMapper orderMapper = sqlSession.getMapper(OrderMapper.class);
+        sqlSession = sqlSessionFactory.openSession();
+    }
 
-        Order order = orderMapper.selectOrderById(324235);
-        System.out.println(order);
-
-//        Order order1 = new Order();
-//        order1.setOrderId(324240);
-//        order1.setOrderNo("P89");
-//        order1.setOrderPrice(23.0F);
-//        int num = orderMapper.insertOrder(order1);
-//        sqlSession.commit();//需要commit才能插入数据
-//        System.out.println(num);
+    public static void main(String[] args) {
+        System.out.println(getOrderMapper().selectOrderById(324233));
+    }
+    public static OrderMapper getOrderMapper(){
+        return sqlSession.getMapper(OrderMapper.class);
     }
 }
