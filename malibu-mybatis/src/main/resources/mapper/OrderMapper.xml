@@ -23,7 +23,7 @@
     </select>
 
     <update id="updateOrder" parameterType="int">
-        UPDATE b2b_order_test SET
+        UPDATE b2b_order_test SET order_no='V89',order_price=988.9 WHERE order_id=#{id}
     </update>
 
     <delete id="deleteOrderById" parameterType="int">

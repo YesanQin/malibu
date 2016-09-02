@@ -3,6 +3,7 @@ package com.malibu.mybatis;
 import com.malibu.mybatis.dto.Order;
 import com.malibu.mybatis.mapper.OrderMapper;
 import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.ognl.ObjectElementsAccessor;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
@@ -35,7 +36,11 @@ public class RepositoryMain {
 
     public static void main(String[] args) {
         System.out.println(getOrderMapper().selectOrderById(324233));
+        getOrderMapper().updateOrder(324233);
+        sqlSession.commit();//这里需要手动提交
+        System.out.println(getOrderMapper().selectOrderById(324233));
     }
+
     public static OrderMapper getOrderMapper(){
         return sqlSession.getMapper(OrderMapper.class);
     }
