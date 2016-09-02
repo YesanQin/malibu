@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<toolbox>
+	<!--<tool class="org.apache.velocity.tools.generic.AlternatorTool"/> <tool 
+		class="org.apache.velocity.tools.generic.ClassTool"/> <tool class="org.apache.velocity.tools.generic.ComparisonDateTool"/> 
+		<tool class="org.apache.velocity.tools.generic.ConversionTool"/> <tool class="org.apache.velocity.tools.generic.DisplayTool"/> 
+		<tool class="org.apache.velocity.tools.generic.EscapeTool"/> <tool class="org.apache.velocity.tools.generic.FieldTool"/> 
+		<tool class="org.apache.velocity.tools.generic.MathTool"/> <tool class="org.apache.velocity.tools.generic.NumberTool"/> 
+		<tool class="org.apache.velocity.tools.generic.ResourceTool"/> <tool class="org.apache.velocity.tools.generic.SortTool"/> 
+		<tool class="org.apache.velocity.tools.generic.XmlTool"/> -->
+
+	<tool>
+		<key>date</key>
+		<scope>application</scope>
+		<class>org.apache.velocity.tools.generic.DateTool</class>
+	</tool>
+	<tool>
+		<key>esc</key>
+		<scope>application</scope>
+		<class>org.apache.velocity.tools.generic.EscapeTool</class>
+	</tool>
+	<tool>
+		<key>enumTool</key>
+		<scope>application</scope>
+		<class>com.maybach.web.framework.util.CommonEnumTool</class>
+	</tool>
+
+	<tool>
+		<key>dateTool</key>
+		<scope>application</scope>
+		<class>org.apache.velocity.tools.generic.ComparisonDateTool</class>
+	</tool>
+
+
+	<tool>
+		<key>mathTool</key>
+		<scope>application</scope>
+		<class>com.maybach.web.framework.util.MathTool</class>
+	</tool>
+
+	<tool>
+		<key>authTool</key>
+		<scope>application</scope>
+		<class>com.maybach.web.framework.util.AuthenticationTool</class>
+	</tool>
+
+
+	<tool>
+		<key>flowTool</key>
+		<scope>application</scope>
+		<class>com.maybach.web.framework.util.FlowTool</class>
+	</tool>
+
+	<tool>
+		<key>resultTool</key>
+		<scope>application</scope>
+		<class>com.maybach.web.framework.util.ResultTool</class>
+	</tool>
+
+
+	<tool>
+		<key>csrfTool</key>
+		<scope>application</scope>
+		<class>com.maybach.web.framework.util.CSRFTool</class>
+	</tool>
+
+	<tool>
+		<key>cityTool</key>
+		<scope>application</scope>
+		<class>com.maybach.component.city.CityData</class>
+	</tool>
+
+	<tool>
+		<key>priceUtil</key>
+		<scope>application</scope>
+		<class>com.maybach.util.PriceUtil</class>
+	</tool>
+
+	<tool>
+		<key>imgUrlUtil</key>
+		<scope>application</scope>
+		<class>com.maybach.util.ImgUrlUtil</class>
+	</tool>
+	<tool>
+		<key>stringUtil</key>
+		<scope>application</scope>
+		<class>com.maybach.util.MayBachStringUtil</class>
+	</tool>
+
+	<tool>
+		<key>mayBachUtil</key>
+		<scope>application</scope>
+		<class>com.maybach.util.MaybachUtil</class>
+	</tool>
+
+	<tool>
+		<key>userTools</key>
+		<scope>application</scope>
+		<class>com.maybach.core.security.AdminUserUtil</class>
+	</tool>
+
+	<tool>
+		<key>loanOrderFlowStatus</key>
+		<scope>application</scope>
+		<class>com.maybach.core.flow.flowStatus.LoanOrderFlowStatus</class>
+	</tool>
+
+</toolbox>

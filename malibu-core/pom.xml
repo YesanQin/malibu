@@ -30,10 +30,15 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
+            <version>4.2.4.RELEASE</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-context-support -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
             <version>4.3.2.RELEASE</version>
         </dependency>
         <!-- spring framework end-->
-
     </dependencies>
     <build>
         <finalName>malibu-core</finalName>

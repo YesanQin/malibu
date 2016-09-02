@@ -6,4 +6,28 @@
 
     <context:component-scan base-package="com.malibu.web.controller,com.malibu.web.service">
     </context:component-scan>
+
+    <bean class="org.springframework.web.servlet.view.velocity.VelocityLayoutViewResolver">
+        <property name="prefix" value="/template/"/>
+        <property name="suffix" value=".vm"/>
+        <property name="contentType" value="text/html;charset=utf-8"></property>
+        <property name="toolboxConfigLocation" value="/velocity/velocity-toolbox.xml"/>
+        <property name="layoutUrl" value="/template/layout.vm"></property>
+        <property name="exposeSessionAttributes" value="true" />
+    </bean>
+
+    <!-- velocity模板引擎 -->
+    <bean id="velocityConfig" class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">
+        <property name="resourceLoaderPath">
+            <value>/</value>
+        </property>
+        <property name="velocityProperties">
+            <props>
+                <prop key="input.encoding">utf-8</prop>
+                <prop key="output.encoding">utf-8</prop>
+                <prop key="contentType">text/html;charset=utf-8</prop>
+            </props>
+        </property>
+        <property name="configLocation" value="/velocity/velocity.properties"/>
+    </bean>
 </beans>
