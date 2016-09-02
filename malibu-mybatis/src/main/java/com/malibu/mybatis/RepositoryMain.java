@@ -1,8 +1,7 @@
 package com.malibu.mybatis;
 
-import com.malibu.mybatis.dto.FlowTask;
 import com.malibu.mybatis.dto.Order;
-import com.malibu.mybatis.mapper.ITestMapper;
+import com.malibu.mybatis.mapper.OrderMapper;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -10,12 +9,11 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import java.io.IOException;
 import java.io.Reader;
-import java.util.Date;
 
 /**
  * Created by qinyisheng on 16/8/31.
  */
-public class TestApp {
+public class RepositoryMain {
 
     private static SqlSessionFactoryBuilder sqlSessionFactoryBuilder;
     private static SqlSessionFactory sqlSessionFactory;
@@ -36,16 +34,16 @@ public class TestApp {
         }
         sqlSessionFactory = sqlSessionFactoryBuilder.build(reader);
         SqlSession sqlSession = sqlSessionFactory.openSession();
-        ITestMapper testMapper = sqlSession.getMapper(ITestMapper.class);
+        OrderMapper orderMapper = sqlSession.getMapper(OrderMapper.class);
 
-        Order order = testMapper.selectOrderById(324235);
+        Order order = orderMapper.selectOrderById(324235);
         System.out.println(order);
 
 //        Order order1 = new Order();
 //        order1.setOrderId(324240);
 //        order1.setOrderNo("P89");
 //        order1.setOrderPrice(23.0F);
-//        int num = testMapper.insertOrder(order1);
+//        int num = orderMapper.insertOrder(order1);
 //        sqlSession.commit();//需要commit才能插入数据
 //        System.out.println(num);
     }

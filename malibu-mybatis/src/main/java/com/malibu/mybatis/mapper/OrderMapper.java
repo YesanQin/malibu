@@ -6,7 +6,7 @@ import com.malibu.mybatis.dto.Order;
 /**
  * Created by qinyisheng on 16/8/31.
  */
-public interface ITestMapper {
+public interface OrderMapper {
     //CRUD
     /*
         增 Create

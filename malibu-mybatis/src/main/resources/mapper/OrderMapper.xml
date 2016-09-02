@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.malibu.mybatis.mapper.ITestMapper">
+<mapper namespace="com.malibu.mybatis.mapper.OrderMapper">
     <!--配置 表字段 和 java实体类字段 映射关系-->
     <resultMap id="orderResultMap" type="com.malibu.mybatis.dto.Order">
         <!--主键用 id元素 表示-->
