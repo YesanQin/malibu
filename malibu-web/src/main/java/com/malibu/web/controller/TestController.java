@@ -13,8 +13,8 @@ public class TestController {
     @Autowired
     private TestService testService;
     @RequestMapping(value = "/test.html")
-    public String showIndex(){
+    public void showIndex(){
         testService.testMethod();
-        return "";
+//        return "";
     }
 }
