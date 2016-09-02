@@ -1,6 +1,7 @@
 package com.malibu.mybatis;
 
 import com.malibu.mybatis.dto.FlowTask;
+import com.malibu.mybatis.dto.Order;
 import com.malibu.mybatis.mapper.ITestMapper;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -35,14 +36,17 @@ public class TestApp {
         }
         sqlSessionFactory = sqlSessionFactoryBuilder.build(reader);
         SqlSession sqlSession = sqlSessionFactory.openSession();
-       ITestMapper testMapper = sqlSession.getMapper(ITestMapper.class);
-        FlowTask flowTask = new FlowTask();
-        flowTask.setAddUser("qinys");
-//        flowTasksk.setGmtCreate(java.sql.Date());
-        flowTask.setIsDeleted(1);
-        flowTask.setTaskModelId(1110);
-        flowTask.setParentTaskId(3293);
-        flowTask.setTaskType(3);
-        testMapper.insertFlowTask(flowTask);
+        ITestMapper testMapper = sqlSession.getMapper(ITestMapper.class);
+
+        Order order = testMapper.selectOrderById(324235);
+        System.out.println(order);
+
+//        Order order1 = new Order();
+//        order1.setOrderId(324240);
+//        order1.setOrderNo("P89");
+//        order1.setOrderPrice(23.0F);
+//        int num = testMapper.insertOrder(order1);
+//        sqlSession.commit();//需要commit才能插入数据
+//        System.out.println(num);
     }
 }
