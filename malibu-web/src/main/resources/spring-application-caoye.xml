@@ -4,33 +4,61 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 
+    <!--启用spring mvc 注解-->
+    <context:annotation-config />
+
     <context:component-scan base-package="com.malibu.web.controller,com.malibu.web.service">
     </context:component-scan>
 
-    <!--velocity-->
-    <bean class="org.springframework.web.servlet.view.velocity.VelocityLayoutViewResolver">
-        <property name="prefix" value="/page/vm/"/>
-        <property name="suffix" value=".vm"/>
-        <property name="contentType" value="text/html;charset=utf-8"></property>
-        <property name="toolboxConfigLocation" value="/velocity/velocity-toolbox.xml"/>
-        <property name="layoutUrl" value="/page/vm/layout.vm"></property>
-        <property name="exposeSessionAttributes" value="true" />
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+        <property name="messageConverters">
+            <list>
+                <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                    <property name="supportedMediaTypes">
+                        <list>
+                            <value>
+                                text/html;charset=UTF-8
+                            </value>
+                        </list>
+                    </property>
+                </bean>
+                <!-- 启动JSON格式的配置 -->
+                <!--<bean id="jacksonMessageConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">-->
+                <!--&lt;!&ndash; 解决 HttpMediaTypeNotAcceptableException: Could not find acceptable representation &ndash;&gt;-->
+                <!--<property name="supportedMediaTypes">-->
+                <!--<list>-->
+                <!--<value>application/json;charset=UTF-8</value>-->
+                <!--</list>-->
+                <!--</property>-->
+                <!--</bean>-->
+            </list>
+        </property>
     </bean>
 
+    <!--velocity-->
+    <!--<bean class="org.springframework.web.servlet.view.velocity.VelocityLayoutViewResolver">-->
+        <!--<property name="prefix" value="/page/vm/"/>-->
+        <!--<property name="suffix" value=".vm"/>-->
+        <!--<property name="contentType" value="text/html;charset=utf-8"></property>-->
+        <!--<property name="toolboxConfigLocation" value="/velocity/velocity-toolbox.xml"/>-->
+        <!--<property name="layoutUrl" value="/page/vm/layout.vm"></property>-->
+        <!--<property name="exposeSessionAttributes" value="true" />-->
+    <!--</bean>-->
+
     <!-- velocity config -->
-    <bean id="velocityConfig" class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">
-        <property name="resourceLoaderPath">
-            <value>/</value>
-        </property>
-        <property name="velocityProperties">
-            <props>
-                <prop key="input.encoding">utf-8</prop>
-                <prop key="output.encoding">utf-8</prop>
-                <prop key="contentType">text/html;charset=utf-8</prop>
-            </props>
-        </property>
-        <property name="configLocation" value="/velocity/velocity.properties"/>
-    </bean>
+    <!--<bean id="velocityConfig" class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">-->
+        <!--<property name="resourceLoaderPath">-->
+            <!--<value>/</value>-->
+        <!--</property>-->
+        <!--<property name="velocityProperties">-->
+            <!--<props>-->
+                <!--<prop key="input.encoding">utf-8</prop>-->
+                <!--<prop key="output.encoding">utf-8</prop>-->
+                <!--<prop key="contentType">text/html;charset=utf-8</prop>-->
+            <!--</props>-->
+        <!--</property>-->
+        <!--<property name="configLocation" value="/velocity/velocity.properties"/>-->
+    <!--</bean>-->
 
     <!--freemarker-->
     <bean id="viewResolver" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">

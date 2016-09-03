@@ -12,6 +12,12 @@
     <name>malibu-core</name>
     <url>http://maven.apache.org</url>
 
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- spring版本号 -->
+        <springframework.version>4.3.0.RELEASE</springframework.version>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>com.malibu</groupId>
@@ -24,21 +30,28 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
-            <version>4.3.2.RELEASE</version>
+            <version>${springframework.version}</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
-            <version>4.2.4.RELEASE</version>
+            <version>${springframework.version}</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.springframework/spring-context-support -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context-support</artifactId>
-            <version>4.3.2.RELEASE</version>
+            <version>${springframework.version}</version>
         </dependency>
         <!-- spring framework end-->
+
+        <!--使用freemarker模版需要添加该jar包-->
+        <dependency>
+            <groupId>org.freemarker</groupId>
+            <artifactId>freemarker</artifactId>
+            <version>2.3.23</version>
+        </dependency>
     </dependencies>
     <build>
         <finalName>malibu-core</finalName>

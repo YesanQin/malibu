@@ -12,9 +12,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class TestController {
     @Autowired
     private TestService testService;
+
     @RequestMapping(value = "/test.html")
-    public void showIndex(){
+    public String showIndex(){
         testService.testMethod();
-//        return "";
+        return "test";
     }
 }
