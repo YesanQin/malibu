@@ -3,6 +3,6 @@
 <title>test</title>
 </head>
 <body>
-<p>Hello Malibu!</p>
+<p>Hello,freemarker test sucessful!</p>
 </body>
 </html>
