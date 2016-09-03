@@ -14,7 +14,7 @@
     </li>
     <li>
         <p>日志</p>
-        <p>log4j</p>
+        <p>slf4j-log4j</p>
         <a href="http://www.codeceo.com/article/8-java-log-framework.html" target="_blank">java日志介绍</a>
         <a href="http://blog.csdn.net/imxiangzi/article/details/7835860" target="_blank">log4j介绍</a>
     </li>
