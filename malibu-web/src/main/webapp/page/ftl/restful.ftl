@@ -1,0 +1,9 @@
+<html>
+<head>
+    <title>restful</title>
+</head>
+<body>
+<p>参数为:${model.id}(数字)</p>
+<p>参数为:${model.id?c}(字符)</p>
+</body>
+</html>
