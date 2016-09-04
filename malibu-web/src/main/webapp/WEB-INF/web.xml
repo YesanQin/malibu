@@ -20,7 +20,7 @@
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
     <init-param>
       <param-name>contextConfigLocation</param-name>
-      <param-value>/WEB-INF/applicationContext-servlet.xml</param-value>
+      <param-value>/WEB-INF/applicationContext.xml</param-value>
       <!--<param-value>classpath:spring-application-caoye.xml</param-value>-->
     </init-param>
     <load-on-startup>1</load-on-startup>
@@ -61,5 +61,14 @@
     <!-- 日志页面的刷新间隔 -->
     <param-name>log4jRefreshInterval</param-name>
     <param-value>6000</param-value>
+  </context-param>
+
+  <!-- 读取spring配置文件 -->
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>/WEB-INF/applicationContext-servlet.xml</param-value>
   </context-param>
 </web-app>
