@@ -11,6 +11,8 @@
     <module>malibu-web</module>
       <module>malibu-mybatis</module>
       <module>malibu-springIOC</module>
+      <module>malibu-redis</module>
+    <module>malibu-mongodb</module>
   </modules>
   <name>malibu-all</name>
   <url>http://maven.apache.org</url>
