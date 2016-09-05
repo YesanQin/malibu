@@ -1,5 +1,6 @@
 package com.malibu.web.controller;
 
+import com.malibu.common.network.NetworkBaseHelper;
 import com.malibu.web.service.TestService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -33,12 +34,16 @@ public class TestController {
 
     @RequestMapping("/http.html")
     public String checkHttpRequest(HttpServletRequest httpServletRequest, @ModelAttribute("model") ModelMap modelMap){
+        LOGGER.info("Parameter"+httpServletRequest.toString());
+        LOGGER.info("Network"+NetworkBaseHelper.getRequest().toString());
         modelMap.put("url",httpServletRequest.getRequestURL());
         return "httpInformation";
     }
 
     @RequestMapping("/restful-{id:\\d+}.html")
-    public String restfulCheck(@PathVariable("id") int restId,@ModelAttribute("model") ModelMap modelMap){
+    public String restfulCheck(@PathVariable("id") int restId,@ModelAttribute("model") ModelMap modelMap,HttpServletRequest httpServletRequest){
+        LOGGER.info("Network:"+NetworkBaseHelper.getRequest().toString());
+        LOGGER.info("Parameter:"+httpServletRequest.toString());
         modelMap.put("id",restId);
         return "restful";
     }
