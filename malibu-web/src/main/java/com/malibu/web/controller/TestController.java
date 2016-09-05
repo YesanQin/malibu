@@ -10,6 +10,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -23,8 +24,15 @@ public class TestController {
     @Autowired
     private TestService testService;
 
+
+    /**
+     *
+     * @param parameter
+     * @return
+     */
     @RequestMapping(value = "/test.html")
-    public String showIndex(){
+    public String showIndex(@RequestParam(value="param",required = false) String parameter){
+        LOGGER.info("============"+parameter);
         LOGGER.info("info test");
         LOGGER.debug("debug test");
         LOGGER.error("Erroe test");
@@ -32,6 +40,12 @@ public class TestController {
         return "test";
     }
 
+    /**
+     *
+     * @param httpServletRequest
+     * @param modelMap
+     * @return
+     */
     @RequestMapping("/http.html")
     public String checkHttpRequest(HttpServletRequest httpServletRequest, @ModelAttribute("model") ModelMap modelMap){
         LOGGER.info("Parameter"+httpServletRequest.toString());
@@ -40,6 +54,13 @@ public class TestController {
         return "httpInformation";
     }
 
+    /**
+     *
+     * @param restId
+     * @param modelMap
+     * @param httpServletRequest
+     * @return
+     */
     @RequestMapping("/restful-{id:\\d+}.html")
     public String restfulCheck(@PathVariable("id") int restId,@ModelAttribute("model") ModelMap modelMap,HttpServletRequest httpServletRequest){
         LOGGER.info("Network:"+NetworkBaseHelper.getRequest().toString());
@@ -47,4 +68,5 @@ public class TestController {
         modelMap.put("id",restId);
         return "restful";
     }
+
 }
