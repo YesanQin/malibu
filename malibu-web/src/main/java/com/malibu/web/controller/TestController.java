@@ -50,14 +50,7 @@ public class TestController {
     public String checkHttpRequest(HttpServletRequest httpServletRequest, @ModelAttribute("model") ModelMap modelMap){
         LOGGER.info("Parameter"+httpServletRequest.toString());
         LOGGER.info("Network"+NetworkBaseHelper.getRequest().toString());
-
-        /*
-            put和addAttribute的方法区别在于addAttribute会进行null验证,不允许放入空值
-            modelMap继承自LinkedHashMap
-         */
         modelMap.put("url",httpServletRequest.getRequestURL());
-        modelMap.addAttribute("parameter",httpServletRequest.toString());
-
         return "httpInformation";
     }
 
