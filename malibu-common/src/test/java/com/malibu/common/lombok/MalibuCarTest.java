@@ -4,7 +4,7 @@ package com.malibu.common.lombok;
  * Created by qinyisheng on 16/9/5.
  */
 public class MalibuCarTest {
-    static MalibuCar malibuCar= null;
+    static MalibuCar malibuCar = null;
     public static void main(String[] args) {
         init();
         System.out.println(malibuCar);
